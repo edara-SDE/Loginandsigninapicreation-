@@ -1,4 +1,4 @@
-package com.login.loginAPI.Controller;
+package com.login.loginAPI.controller;
 
 import com.login.loginAPI.Role;
 import com.login.loginAPI.User;

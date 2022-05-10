@@ -4,12 +4,19 @@ import com.login.loginAPI.User;
 import org.springframework.data.domain.Example;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+
+import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
+
+@Transactional
 public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> findByEmail(String email);
-    Optional<User> findByUsernameOrEmail(String username, String email);
-    Optional<User> findByUsername(String username);
+    List<User> findByEmail(String email);
+    List<User>findByUsernameOrEmail(String username, String email);
+    List<User> findByUsername(String username);
     Boolean existsByUsername(String username);
     Boolean existsByEmail(String email);
+
+
 }
